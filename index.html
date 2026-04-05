@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Nexus - AI Admissions Counselor</title>
+      <link rel="stylesheet" href="style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+      <script src="https://unpkg.com/@phosphor-icons/web"></script>
+      <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body class="dark-theme">
+      <div id="welcome-modal" class="modal-overlay hidden">
+          <div class="modal-content">
+              <div class="modal-icon"><i class="ph ph-hand-waving"></i></div>
+              <h2>Welcome to Victus College</h2>
+              <p>Please enter your name to begin your admission enquiry.</p>
+            <input type="text" id="student-name-input" placeholder="Your Name" autocomplete="off">
+              <button class="modal-btn" id="start-chat-btn">Start Chatting</button>
+          </div>
+      </div>
+      <div class="background-elements">
+          <div class="blob shape1"></div>
+          <div class="blob shape2"></div>
+          <div class="blob shape3"></div>
+      </div>
+      <div class="app-layout">
+          <aside class="sidebar" id="sidebar">
+              <div class="sidebar-header">
+                  <h2><i class="ph ph-graduation-cap"></i> Victus College</h2>
+                  <button class="icon-button mobile-close-btn" id="close-sidebar-btn" onclick="document.getElementById('sidebar').classList.remove('open')"><i class="ph ph-x" style="pointer-events: none;"></i></button>
+              </div>
+              <button class="new-chat-btn" id="new-chat-btn"><i class="ph ph-plus"></i> New Enquiry</button>
+              <div class="sidebar-section">
+                  <h3>Campus Links</h3>
+                  <a href="#" class="sidebar-link sidebar-action" data-query="Tell me all the details about the current Admissions Drive, including deadlines, eligibility, and how to apply."><i class="ph ph-link"></i> Admissions Drive</a>
+                  <a href="#" class="sidebar-link sidebar-action" data-query="Please generate a detailed table of the full Fee Structure for all UG and PG courses."><i class="ph ph-link"></i> Fee Structure PDF</a>
+                  <a href="#" class="sidebar-link sidebar-action" data-query="Please give me a descriptive Virtual Tour of the campus facilities and the hostels!"><i class="ph ph-link"></i> Virtual Tour</a>
+              </div>
+              <div class="sidebar-footer">
+                  <p>Powered by Nexus AI</p>
+                <button class="export-btn" id="export-chat-btn"><i class="ph ph-download-simple"></i> Download Chat</button>
+              </div>
+          </aside>
+          <main class="main-content">
+              <header class="top-nav">
+                  <button class="icon-button menu-btn" id="open-sidebar-btn" title="Open Menu" onclick="document.getElementById('sidebar').classList.toggle('open')"><i class="ph ph-list" style="pointer-events: none;"></i></button>
+                  <div class="nav-actions">
+                      <button class="icon-button toggle-btn" id="theme-toggle" title="Toggle Light/Dark Theme"><i class="ph ph-sun"></i></button>
+                  </div>
+              </header>
+              <div class="chat-container" id="chat-box"></div>
+              <div class="input-section">
+                  <div class="quick-chips" id="quick-chips">
+                      <button class="chip" data-query="What UG and PG courses are offered?">Course List</button>
+                      <button class="chip" data-query="Can you tell me the full fee structure for B.Tech and MBA?">Fee Structure</button>
+                      <button class="chip" data-query="What is the placement record like and highest package?">Placements</button>
+                      <button class="chip" data-query="What are the hostel facilities available?">Hostel Facilities</button>
+                      <button class="chip" data-query="What are the steps to apply for admission?">How to Apply</button>
+                </div>
+                <div class="input-wrapper">
+                    <textarea id="user-input" rows="1" placeholder="Ask Nexus about admissions..." autocomplete="off"></textarea>
+                      <button class="input-icon-btn send-btn" id="send-btn" title="Send Message"><i class="ph ph-paper-plane-right"></i></button>
+                  </div>
+              </div>
+          </main>
+      </div>
+      <script src="script.js"></script>
+  </body>
+  </html>
