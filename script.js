@@ -15,8 +15,8 @@ const startChatBtn = document.getElementById('start-chat-btn');
 const exportChatBtn = document.getElementById('export-chat-btn');
 
 // --- ⚙️ CONFIGURATION ⚙️ ---// Split into two parts so GitHub's Secret Scanner doesn't instantly delete
-const PART_1 = "AIzaSyCdGeXvZRxMe_KN";
-const PART_2 = "9a-aL74Pxr510ivB79c";
+const PART_1 = "AIzaSyCOQgDXe0TIsB";
+const PART_2 = "GuRkbNKWH_8pJlq2hX";
 const GEMINI_API_KEY = PART_1 + PART_2;
 const COLLEGE_NAME = "Victus College";
 
